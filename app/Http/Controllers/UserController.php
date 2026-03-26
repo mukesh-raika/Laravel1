@@ -7,15 +7,10 @@ use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
-    //
-    function login(Request $req){
-        $req->session()->put('user',$req->input('user'));
-        return redirect('profile');
-    }
-
-    function logout(){
-        session()->pull('user');
-        return redirect('profile'); 
+    
+    function addUser(Request $request){
+         $request->session()->flash('message','User has been added successfully');
+          session(['username' => $request->username]);
+          return redirect('user');
     }
 }
-
