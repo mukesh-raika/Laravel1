@@ -25,7 +25,7 @@ class StudentController extends Controller
     }
 
     function list(){
-      $studentData= Student::all();
+      $studentData= Student::paginate(4);
 
         return view('list-student',['Students'=>$studentData]);
     }
@@ -55,4 +55,19 @@ class StudentController extends Controller
         return "Update operation failed"; 
       }
    }
+
+   function search(Request $request){
+    $studentData = Student::where('name', 'like', '%' . $request->search . '%')->get();
+    
+    return view('list-student', ['Students' => $studentData, 'search'=>$request->search]);
+}
+
+    function deleteMultiple(Request $request){
+       $result= Student::destroy($request->ids);
+      if($result){
+        return redirect('list');
+      }else{
+        return "student data not deleted";
+      }
+    }
 }
