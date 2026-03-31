@@ -33,6 +33,8 @@ Route::view('about','about');
 Route::view('home','home');
 Route::view('login','login');
 
+Route::view('admin','admin');
+
 
 
 
