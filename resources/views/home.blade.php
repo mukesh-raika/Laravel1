@@ -1,10 +1,12 @@
-<x-layout>
-    <x-slot name="title">Home Page</x-slot>
-    <x-slot name="main">
-         <div>
-        <h1 class="heading">Home Page Heading</h1>
-        <h3>Sub Heading for home page</h3>
-        <p>Dummy Paragraph text for home page</p>
-    </div>
-    </x-slot>
-</x-layout>
+@extends('layout')
+@section('title','This Is Home Page')
+
+
+@section('main')
+
+<div class="main">
+  <h1> User Home Page</h1>
+  <h3>Sub Heading  for Home page</h3>
+  <p>Text for home page</p>
+  
+@endsection

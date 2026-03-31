@@ -1,23 +1,18 @@
-<x-layout>
-    <x-slot name="title">Login  Page</x-slot>
-    <x-slot name="main">
-         <div>
-          <h1 id="heading" class="heading">User Login</h1>
-         <div class="mb-3 row">
-    <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
-    <div class="col-sm-10">
-      <input type="text"class="form-control" id="staticEmail" value="email@example.com">
-    </div>
-  </div>
-  <div class="mb-3 row">
-    <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
-    <div class="col-sm-10">
-      <input type="password" class="form-control" id="inputPassword">
-    </div>
-  </div>
-        <button type="button" class="btn btn-primary " onclick="changeColor()">Login</button>
-        <button type="button" class="btn btn-success"  onclick="greenColor()">Success</button>
-    </div>
-    </x-slot>
-</x-layout>
+@extends('layout');
 
+@section('title','This Is Login Page') 
+
+@section('main')
+
+<div class="main">
+  <h1>User Login</h1>
+  <br>
+  <form action="" method="get">
+   <input type="text" class="form-control w-50 mx-auto d-block " placeholder="name">
+    <br>
+   <input type="text" class="form-control w-50 mx-auto d-block " placeholder="password">
+    <br><br>
+   <button type="button" class="btn btn-primary rounded-pill">Login</button>
+  </form>
+</div>
+@endsection
