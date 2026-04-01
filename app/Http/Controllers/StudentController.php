@@ -15,6 +15,15 @@ class StudentController extends Controller
         return Student::all();
          
     }
+   
+    function save(){
+       $student= new Student();
+       $student->name="bruse";
+       $student->email="bruse@test.com";
+       if($student->save()){
+        echo "neew student  added";
+        }
 
+    }
     
 }

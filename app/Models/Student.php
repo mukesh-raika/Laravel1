@@ -12,4 +12,10 @@ class Student extends Model
   function getNameAttribute($val){
        return ucfirst($val);
   }
+   
+
+  function setNameAttribute($val){
+     $this->attributes['name']=ucfirst($val);  
+  }
+  
 }

@@ -35,7 +35,9 @@ Route::view('login','login');
 
 Route::view('admin','admin');
 
-Route::get('list',[StudentController::class,'list']);    
+Route::get('list',[StudentController::class,'list']);   
+
+Route::get('save',[StudentController::class,'save']);
 
 
 
