@@ -7,17 +7,19 @@ use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 
-class studentsSeeder extends Seeder
+class usersSeeder extends Seeder
 {
     /**
      * Run the database seeds.
      */
     public function run(): void
     {
-        DB::table('students')->insert([
+        DB::table('users')->insert([
             'name'=>Str::random(10),
-            'email'=>Str::random(10).'test@abc.com',
-            'age'=>fake()->numberBetween(20,30),
+            'email'=>Str::random(10).'test@email.com',
+            'password'=>fake()->numberBetween(8),
         ]);
+
+        //
     }
 }
