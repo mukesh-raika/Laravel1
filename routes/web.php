@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\SellerController;
-
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\DeviceController;
 
 Route::get('/', function () {
@@ -30,6 +30,8 @@ Route::get('list',[SellerController::class,'list']);
 
 
 Route::get('device/{key:name}',[DeviceController::class,'index']);
+
+Route::get('product',[ProductController::class,'productlist']);
 
 
 
