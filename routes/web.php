@@ -3,7 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\SellerController;
-use Illuminate\Support\Str;
+
+use App\Http\Controllers\DeviceController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -27,14 +28,8 @@ Route::view('admin','admin');
 Route::get('save',[StudentController::class,'save']);
 Route::get('list',[SellerController::class,'list']);
 
-$info="hi let s learn Laravel";
-// $info=Str::ucfirst($info);
-// $info=Str::replaceFirst("Hi","Hello",$info);
-//  $info=Str::camel($info);
 
-$info=Str::of($info)->ucfirst($info)->replaceFirst("Hi","Hello",$info)->camel($info);
-echo $info;
-
+Route::get('device/{key:name}',[DeviceController::class,'index']);
 
 
 
